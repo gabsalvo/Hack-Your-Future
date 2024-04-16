@@ -184,3 +184,80 @@ app.delete('/items/:id', (req, res) => {
   items = items.filter(i => i.id !== parseInt(req.params.id));
   res.status(204).send();
 });
+
+/**
+ * Exercises:
+ * Exercise 1: Basic Express Server
+ *
+ *     Objective: Set up a basic Express server that listens on port 3000.
+ *     Tasks:
+ *         Serve a static HTML file on the root route (/).
+ *         Add a route that returns a simple JSON object when visited.
+ *
+ * Exercise 2: HTTP Methods
+ *
+ *     Objective: Understand and handle different HTTP methods.
+ *     Tasks:
+ *         Create a route that responds to GET requests at /about and returns a plain text message.
+ *         Add a POST route at /submit that logs the JSON body sent to the server.
+ *         Implement a PUT route at /update/:id that would theoretically update an item by ID (for now, just log the ID and the body).
+ *         Create a DELETE route at /delete/:id that logs the ID of the item to delete.
+ *
+ * Exercise 3: Middleware
+ *
+ *     Objective: Use Express middleware to process requests.
+ *     Tasks:
+ *         Write a middleware function that logs the request method and the requested path for every request.
+ *         Utilize the express.json() middleware to parse JSON bodies.
+ *
+ * Exercise 4: RESTful API with In-Memory Storage
+ *
+ *     Objective: Build a simple RESTful API to perform CRUD operations on an in-memory array of objects.
+ *     Tasks:
+ *         Define an array of objects, each with an id and a name, to act as your in-memory database.
+ *         Implement RESTful routes (GET, POST, PUT, DELETE) to perform CRUD operations on the array.
+ *         Ensure proper status codes are sent back in the response.
+ *
+ * Exercise 5: File Handling
+ *
+ *     Objective: Read and write data to files using the fs module.
+ *     Tasks:
+ *         Create a route that reads a file and sends the content back to the client.
+ *         Implement a route that writes data to a file on the server based on the request body.
+ *
+ * Exercise 6: Advanced CRUD Operations
+ *
+ *     Objective: Expand the in-memory CRUD application to include more complex operations.
+ *     Tasks:
+ *         Add search functionality that allows users to find items by name in your in-memory array.
+ *         Implement pagination in the GET route to limit the number of items returned.
+ *
+ * Exercise 7: Data Validation
+ *
+ *     Objective: Validate incoming data before performing operations.
+ *     Tasks:
+ *         Validate the JSON body on the POST and PUT routes to ensure required fields are included.
+ *         Send a 400 Bad Request response if the validation fails.
+ *
+ * Exercise 8: Error Handling
+ *
+ *     Objective: Implement error handling in your application.
+ *     Tasks:
+ *         Add try/catch blocks where necessary to catch and respond to errors.
+ *         Create a centralized error handler middleware to manage errors and send responses.
+ *
+ * Exercise 9: Unit Testing
+ *
+ *     Objective: Write tests for your API.
+ *     Tasks:
+ *         Set up a testing framework like Mocha and Chai.
+ *         Write tests for each of your routes to ensure they return the correct status codes and outputs.
+ *
+ * Exercise 10: Authentication (Advanced)
+ *
+ *     Objective: Add basic authentication to your API.
+ *     Tasks:
+ *         Implement a signup route that adds a new user with a username and password to an in-memory store.
+ *         Create a login route that checks a username and password and returns a simple token (e.g., a random string).
+ *         Protect your CRUD routes so that only requests with a valid token in the header can access them.
+ */
